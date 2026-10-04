@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "亲友娱乐 Hub",
+  "version": "0.1.0",
+  "identifier": "cn.qinyou.hub",
+  "build": {
+    "beforeBuildCommand": {
+      "script": "npm --prefix web run build",
+      "cwd": "../.."
+    },
+    "beforeDevCommand": {
+      "script": "npm --prefix web run dev",
+      "cwd": "../.."
+    },
+    "devUrl": "http://localhost:5174",
+    "frontendDist": "../../web/dist"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "label": "main",
+        "title": "亲友娱乐 Hub",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 360,
+        "minHeight": 600
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self' ipc: http://ipc.localhost http://127.0.0.1:* ws://127.0.0.1:* http://localhost:* ws://localhost:*"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "icons/icon.ico",
+      "icons/icon.png"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "offlineInstaller"
+      }
+    },
+    "android": {
+      "minSdkVersion": 28
+    }
+  }
+}

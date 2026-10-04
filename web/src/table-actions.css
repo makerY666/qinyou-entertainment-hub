@@ -1,0 +1,36 @@
+/* The two table entry points stay visible at every viewport size. */
+.table-toolbar .table-title { min-width: 0; }
+.table-toolbar .table-title h1 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.toolbar-actions .table-orientation-action,
+.toolbar-actions .table-invite-action { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 48px; white-space: nowrap; font-size: 16px; flex: none; }
+.toolbar-actions .table-orientation-action { background: #d7b77f; color: #193831; border-color: #d7b77f; font-weight: 500; }
+.toolbar-actions .table-invite-action { border-color: #bda574; color: #f1f6ef; }
+.toolbar-actions .table-audio-action { display: none; }
+.table-page:fullscreen { background: #092923; }
+@media(max-width:600px) and (orientation:portrait) {
+ .table-toolbar { gap: 6px; }
+ .table-toolbar .table-title { flex: 1; width: 0; }
+ .table-toolbar .table-title h1 { font-size: 15px; }
+ .table-toolbar .table-title>span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 10px; }
+ .toolbar-actions { flex: none; gap: 4px; }
+ .toolbar-actions .table-secondary-action { display: none; }
+ .toolbar-actions .table-orientation-action,
+ .toolbar-actions .table-invite-action { min-height: 48px; padding: 6px 7px; gap: 4px; font-size: 15px; }
+ .toolbar-actions .table-orientation-action svg,
+ .toolbar-actions .table-invite-action svg { width: 16px; flex: none; }
+ .toolbar-actions>.utility-button:last-child { min-height: 48px; min-width: 48px; padding: 6px; }
+ .large-text .toolbar-actions .table-orientation-action,
+ .large-text .toolbar-actions .table-invite-action { font-size: 16px; }
+}
+@media(max-height:500px) and (orientation:landscape) {
+ .table-toolbar .table-title { flex: 1; width: 0; }
+ .table-toolbar .table-title h1 { max-width: 180px; }
+ .table-toolbar .table-title>span { display: none; }
+ .toolbar-actions { flex: none; gap: 5px; }
+ .toolbar-actions .table-orientation-action,
+ .toolbar-actions .table-invite-action { min-height: 48px; padding: 5px 9px; font-size: 15px; gap: 5px; }
+ .large-text .toolbar-actions .table-orientation-action,
+ .large-text .toolbar-actions .table-invite-action { font-size: 16px; }
+}
+.toolbar-actions .table-orientation-action svg,
+.toolbar-actions .table-invite-action svg { display: block; flex: none; }

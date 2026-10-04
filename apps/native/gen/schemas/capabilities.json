@@ -1,0 +1,1 @@
+{"main-local":{"identifier":"main-local","description":"Only the bundled application UI may control its local host.","local":true,"windows":["main"],"permissions":["core:default"]}}

@@ -1,0 +1,47 @@
+亲友娱乐 Hub — 源码查看声明 / Source Viewing Notice
+
+Copyright (c) 2026 makerY666. All rights reserved.
+版权所有，保留所有权利。
+
+1. 适用范围
+本声明适用于本仓库中由本项目权利人拥有版权的源代码、文档、界面设计、
+图形、音频及其他原创内容。第三方材料和依赖不适用本声明，仍受各自许可
+约束；参见 THIRD_PARTY_NOTICES.md 和相应文件内的版权与许可声明。
+
+2. 公开展示与权利保留
+本仓库公开仅供查看和了解项目，不授予使用、运行、修改、制作衍生作品、
+复制、分发、再发布、再许可或商业利用的许可。除适用法律允许的行为、
+GitHub 平台条款所要求的权利及另行书面授权外，实施上述行为必须事先
+取得权利人的书面许可。技术文档、构建命令或公开可访问性不构成授权。
+
+3. GitHub 平台与法定权利
+本声明不限制 GitHub 服务条款要求授予平台及用户的权利，包括通过
+GitHub 功能查看和 Fork 本公开仓库，也不限制适用法律规定不可排除的
+权利。GitHub 上的 Fork 不代表取得本声明之外的商用、运行、修改使用、
+站外分发或再发布授权。
+
+4. 其他权利
+除另有书面约定外，不授予商标、项目名称、标志或专利许可。第三方组件
+的许可不应被解释为对本项目原创内容的许可。
+
+5. 按现状提供
+在适用法律允许的最大范围内，本项目按现状提供，不提供适销性、特定
+用途适用性、不侵权或其他明示或默示保证；权利人不对使用或无法使用
+本项目造成的损失承担责任。
+
+6. 获取授权
+请通过 https://github.com/makerY666/qinyou-entertainment-hub/issues
+联系维护者。提出请求不等于获得许可，需以权利人的明确书面授权为准。
+
+本声明为限制性源码查看声明，不是 OSI 认可的开源许可证。
+本声明以中文为准。以下英文摘要仅为阅读便利，不构成额外授权。
+
+English summary
+This repository is publicly visible for inspection only. No permission to use,
+run, modify, create derivative works, copy, distribute, republish, sublicense,
+or commercially exploit project-owned material is granted, except as required
+by applicable law or GitHub's Terms of Service, or expressly authorized in
+writing by the rights holder. GitHub's platform rights, including viewing and
+forking through GitHub, remain unaffected. Third-party materials retain their
+own licenses. The project is provided as-is to the extent permitted by law.
+This is a restrictive source-viewing notice, not an open-source license.

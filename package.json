@@ -1,0 +1,15 @@
+{
+  "name": "qinyou-entertainment-hub",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "web:dev": "npm --prefix web run dev",
+    "web:build": "npm --prefix web run build",
+    "test": "cargo test -p mahjong -p doudizhu -p guandan -p hub-server",
+    "host": "cargo run -p hub-server --",
+    "native:dev": "cd apps/native && tauri dev",
+    "check": "npm run web:build && cargo check --workspace"
+  },
+  "devDependencies": { "@tauri-apps/cli": "^2.10.0" }
+}

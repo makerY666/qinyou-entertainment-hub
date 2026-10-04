@@ -1,0 +1,1498 @@
+.ddz-page {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  --ddz-gold: #d7b77f;
+  --ddz-ink: #193831;
+}
+.ddz-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 54px;
+}
+.ddz-title h1 {
+  font:
+    600 24px/1.3 "Noto Serif SC",
+    serif;
+  margin: 0;
+}
+.ddz-title p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+.ddz-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ddz-tools .utility-button,
+.ddz-expand,
+.ddz-menu-grid .utility-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 48px;
+}
+.ddz-arena {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) 150px;
+  grid-template-rows: 96px minmax(150px, 1fr) auto 68px;
+  gap: 10px;
+  width: 100%;
+  min-height: 580px;
+  height: calc(100dvh - 108px);
+  padding: 20px 24px 12px;
+  background: radial-gradient(
+    ellipse at 50% 28%,
+    #28554a 0,
+    #163f35 58%,
+    #10362e 100%
+  );
+  border: 1px solid #d7b77f88;
+  border-radius: 28px;
+  box-shadow:
+    inset 0 0 0 5px #0b2f28,
+    inset 0 0 0 6px #d7b77f30;
+}
+.ddz-arena:before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid #d7b77f1c;
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+.ddz-table-meta {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  text-align: center;
+  align-self: start;
+}
+.ddz-table-meta > p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 8px 0;
+}
+.ddz-table-meta > p b {
+  color: var(--accent);
+  font-size: 17px;
+  margin-left: 10px;
+}
+.ddz-bottom {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.poker-card {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: 58px;
+  height: 82px;
+  overflow: hidden;
+  background: #f7f5e9;
+  color: #193831;
+  border: 1px solid #d8d7c9;
+  border-radius: 7px;
+  box-shadow:
+    0 3px 0 #b8c2ad,
+    0 4px 6px #041f2540;
+  padding: 0;
+  font-family: "Noto Serif SC", Georgia, serif;
+  line-height: 1;
+  vertical-align: top;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.poker-card.red {
+  color: #a72f2b;
+}
+.poker-corner {
+  position: absolute;
+  left: 5%;
+  top: 4%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 22px;
+  gap: 1px;
+  line-height: 1;
+  font-family: Georgia, "Noto Serif SC", serif;
+  font-weight: bold;
+}
+.poker-corner b {
+  font-size: 1em;
+  letter-spacing: -1px;
+}
+.poker-corner i {
+  font-style: normal;
+  font-size: 0.83em;
+}
+.poker-corner-bottom {
+  left: auto;
+  top: auto;
+  right: 5%;
+  bottom: 4%;
+  transform: rotate(180deg);
+}
+.poker-art {
+  position: absolute;
+  inset: 17% 24%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.poker-art svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: currentColor;
+}
+.poker-court {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid currentColor;
+  outline: 1px solid #d7b77f66;
+  outline-offset: 2px;
+  font-size: 24px;
+}
+.poker-court small {
+  font-size: 14px;
+  line-height: 1;
+}
+.poker-court b {
+  font-size: 1.1em;
+  line-height: 1.3;
+}
+.poker-court small:last-child {
+  transform: rotate(180deg);
+}
+.poker-court.joker {
+  border-radius: 50%;
+  border-width: 1px;
+}
+.poker-selected {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  display: grid;
+  place-items: center;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #d7b77f;
+  color: #193831;
+}
+.poker-back {
+  display: inline-grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 34px;
+  height: 48px;
+  border: 2px solid #d7b77f;
+  border-radius: 5px;
+  box-shadow:
+    inset 0 0 0 2px #123d36,
+    inset 0 0 0 3px #d7b77f77;
+  background: repeating-linear-gradient(45deg, #254d43 0 4px, #1a4038 4px 8px);
+  color: #d7b77f;
+  font-family: Georgia, serif;
+  font-size: 22px;
+}
+.ddz-bottom .poker-card {
+  width: 36px;
+  height: 50px;
+  border-radius: 4px;
+}
+.ddz-bottom .poker-corner {
+  font-size: 15px;
+}
+.ddz-bottom .poker-art {
+  inset: 23% 26%;
+}
+.ddz-bottom .poker-court {
+  font-size: 13px;
+}
+.ddz-bottom .poker-court small {
+  font-size: 8px;
+}
+.ddz-player {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  min-width: 0;
+  align-self: start;
+}
+.ddz-player-left {
+  grid-column: 1;
+  grid-row: 1/3;
+  margin-top: 30px;
+}
+.ddz-player-right {
+  grid-column: 3;
+  grid-row: 1/3;
+  margin-top: 30px;
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.ddz-avatar {
+  width: 52px;
+  height: 60px;
+  flex: 0 0 52px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d7b77f77;
+  border-radius: 20px 20px 12px 12px;
+  background: #0f312a;
+  color: var(--accent);
+  box-shadow: inset 0 0 0 4px #214b40;
+}
+.ddz-avatar > svg {
+  width: 28px;
+  height: 28px;
+}
+.ddz-player.acting .ddz-avatar {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.ddz-clock {
+  position: absolute;
+  left: 50%;
+  bottom: -14px;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  min-width: 30px;
+  height: 28px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: #193831;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+.ddz-player-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 14px;
+}
+.ddz-player-right .ddz-player-info {
+  align-items: flex-end;
+}
+.ddz-player-info > strong {
+  font-size: 16px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ddz-player-info small {
+  font-size: 11px;
+  font-weight: 400;
+}
+.ddz-role {
+  font-size: 13px;
+  color: var(--accent);
+}
+.ddz-player-score {
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.ddz-card-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  margin-top: 8px;
+}
+.ddz-card-count .poker-back {
+  width: 22px;
+  height: 29px;
+  border-width: 1px;
+}
+.ddz-card-count.urgent {
+  color: #f0a393;
+  font-weight: 700;
+}
+.ddz-bid-label {
+  color: var(--accent);
+  font-size: 17px;
+}
+.ddz-player-bubble {
+  position: absolute;
+  top: 110px;
+  white-space: nowrap;
+  left: 10px;
+  background: #f1f6ef;
+  color: #193831;
+  padding: 7px 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  z-index: 2;
+}
+.ddz-player-right .ddz-player-bubble {
+  left: auto;
+  right: 10px;
+}
+.ddz-empty-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.ddz-empty-controls .button,
+.ddz-empty-controls .utility-button,
+.ddz-remove-bot {
+  min-height: 48px;
+  font-size: 13px;
+  padding: 5px 8px;
+}
+.ddz-center {
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  align-self: stretch;
+  padding-bottom: 12px;
+}
+.ddz-status {
+  font-size: 16px;
+  color: #c9d9ce;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+}
+.ddz-status.your-turn {
+  color: var(--accent);
+  font-weight: 600;
+}
+.ddz-status b {
+  white-space: nowrap;
+}
+.ddz-table-mark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #98b6a488;
+}
+.ddz-table-mark span {
+  font:
+    64px/1 Georgia,
+    serif;
+  color: #b8c8ab33;
+}
+.ddz-table-mark b {
+  font:
+    500 18px/1.5 "Noto Serif SC",
+    serif;
+  letter-spacing: 3px;
+}
+.ddz-last-play {
+  max-width: 100%;
+  text-align: center;
+}
+.ddz-last-play > p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+.ddz-last-play strong {
+  font-size: 15px;
+  color: var(--accent);
+  margin-left: 8px;
+}
+.poker-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.ddz-last-play .poker-row {
+  flex-wrap: nowrap;
+  padding-left: 28px;
+}
+.ddz-last-play .poker-card {
+  margin-left: -28px;
+}
+.ddz-last-play .poker-corner-bottom {
+  display: none;
+}
+.ddz-hand-area {
+  grid-column: 1/-1;
+  grid-row: 3;
+  position: relative;
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+}
+.ddz-player-self {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 160px;
+}
+.ddz-player-self .ddz-player-bubble {
+  top: -35px;
+}
+.ddz-hand-section {
+  min-width: 0;
+  width: calc(100% - 240px);
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.ddz-hand-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 13px;
+  padding: 0 3px;
+  color: var(--muted);
+}
+.ddz-hand-heading strong {
+  white-space: nowrap;
+  color: var(--text);
+  font-weight: 500;
+}
+.ddz-hand-heading > span {
+  text-align: right;
+  min-height: 19px;
+}
+.poker-hand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 22px 0 5px;
+  touch-action: none;
+  user-select: none;
+  gap: 18px;
+}
+.poker-fan {
+  position: relative;
+  height: var(--card-height, 124px);
+  max-width: 100%;
+}
+.poker-fan .poker-card {
+  position: absolute;
+  top: 0;
+  width: var(--card-width);
+  height: var(--card-height, 124px);
+  cursor: pointer;
+  transition:
+    transform 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 150ms;
+}
+.poker-fan .poker-corner {
+  font-size: 27px;
+  left: 6%;
+  top: 5%;
+}
+.poker-fan .poker-corner-bottom {
+  left: auto;
+  right: 6%;
+  top: auto;
+  bottom: 5%;
+}
+.poker-fan .poker-card.selected {
+  transform: translateY(-16px);
+  border-color: #c9a969;
+  box-shadow:
+    0 0 0 2px #d7b77f,
+    0 3px 0 #b8c2ad,
+    0 7px 8px #041f2540;
+}
+.poker-card:focus-visible {
+  outline: 3px solid #d7b77f;
+  outline-offset: 3px;
+}
+.ddz-expand {
+  font-size: 12px;
+  padding: 2px 10px;
+  margin: 2px auto 0;
+  display: flex;
+  min-height: 48px !important;
+}
+.ddz-actions {
+  grid-column: 1/-1;
+  grid-row: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  z-index: 5;
+}
+.ddz-actions .button {
+  min-width: 105px;
+  min-height: 50px;
+  font-size: 17px;
+  border-radius: 10px;
+}
+.ddz-actions .primary {
+  min-width: 132px;
+  box-shadow: 0 3px 0 #8a6d42;
+}
+.ddz-hint-message {
+  position: absolute;
+  bottom: 78px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  background: #123d36;
+  padding: 4px 12px;
+  color: var(--accent);
+  font-size: 14px;
+  text-align: center;
+}
+.ddz-waiting-copy {
+  width: 100%;
+  text-align: center;
+  color: var(--muted);
+  padding: 35px 0;
+}
+.ddz-feedback {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -30%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background: #0b302af2;
+  border: 1px solid #d7b77f99;
+  box-shadow: 0 7px 24px #09292388;
+  border-radius: 12px;
+  padding: 10px 22px;
+  color: var(--accent);
+  pointer-events: none;
+  z-index: 4;
+  white-space: nowrap;
+}
+.ddz-feedback small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 3px;
+}
+.ddz-feedback b {
+  font:
+    600 27px/1.2 "Noto Serif SC",
+    serif;
+}
+.ddz-effect-icon:empty {
+  display: none;
+}
+.ddz-effect-icon svg {
+  width: 40px;
+  height: 40px;
+}
+.ddz-feedback-bomb:before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border: 3px solid #d7b77f;
+  border-radius: 50%;
+  opacity: 0;
+  animation: ddz-blast 550ms ease-out;
+}
+.ddz-feedback-rocket .ddz-effect-icon {
+  animation: ddz-launch 600ms ease-out;
+}
+.ddz-feedback-airplane .ddz-effect-icon,
+.ddz-feedback-airplane_single .ddz-effect-icon,
+.ddz-feedback-airplane_pair .ddz-effect-icon {
+  animation: ddz-flight 650ms ease-out;
+}
+.ddz-feedback-finish,
+.ddz-feedback-spring,
+.ddz-feedback-anti-spring {
+  animation: ddz-stamp 500ms ease-out;
+}
+.ddz-feedback-finish:after,
+.ddz-feedback-spring:after,
+.ddz-feedback-anti-spring:after {
+  content: "✦ · ✧ · ✦";
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: -28px;
+  font-size: 24px;
+  color: var(--accent);
+}
+.ddz-settlement {
+  border-top: 1px solid #d7b77f66;
+  padding: 20px;
+  text-align: center;
+  background: #123d36;
+  border-radius: 16px;
+}
+.ddz-settlement h2 {
+  font-size: 24px;
+  color: var(--accent);
+}
+.ddz-scoreboard {
+  display: flex;
+  justify-content: center;
+  margin: 18px 0;
+  gap: 24px;
+}
+.ddz-scoreboard > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 80px;
+}
+.ddz-scoreboard strong {
+  font-size: 28px;
+  color: var(--accent);
+}
+.ddz-scoreboard small {
+  color: var(--muted);
+}
+.ddz-settlement summary {
+  cursor: pointer;
+  min-height: 48px;
+  align-content: center;
+}
+.ddz-settlement p {
+  margin: 8px;
+}
+.ddz-selection-dialog {
+  max-width: 800px !important;
+}
+.ddz-expanded-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(62px, 1fr));
+  gap: 16px 10px;
+  margin: 24px 0 16px;
+}
+.ddz-expanded-cards .poker-card {
+  width: 62px;
+  height: 88px;
+  justify-self: center;
+  cursor: pointer;
+}
+.ddz-expanded-cards .poker-card.selected {
+  outline: 3px solid #d7b77f;
+  transform: translateY(-5px);
+}
+.ddz-dialog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  position: sticky;
+  bottom: -1px;
+  padding: 12px 0;
+  background: var(--surface);
+}
+.ddz-dialog-actions > span {
+  margin-right: auto;
+  color: var(--muted);
+}
+.ddz-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 16px 0;
+}
+.ddz-options .audio-channel {
+  min-height: 48px;
+}
+.ddz-options input[type="range"] {
+  min-height: 48px;
+}
+.ddz-orientation,
+.ddz-sound-error {
+  font-size: 14px;
+  color: var(--accent);
+  margin: 0;
+}
+.ddz-orientation button {
+  margin-left: 8px;
+  text-decoration: underline;
+}
+.ddz-rules p {
+  line-height: 1.85;
+  margin: 14px 0;
+}
+.ddz-replay section {
+  margin: 18px 0;
+}
+.ddz-replay section > p {
+  margin-bottom: 12px;
+}
+.game-filter {
+  margin: 12px 0 20px;
+  max-width: 320px;
+}
+@keyframes ddz-arrive {
+  from {
+    opacity: 0.2;
+    transform: translate(var(--ddz-from-x, 0), var(--ddz-from-y, 18px))
+      scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+@keyframes ddz-blast {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.65);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+@keyframes ddz-launch {
+  from {
+    opacity: 0.2;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes ddz-flight {
+  from {
+    opacity: 0.2;
+    transform: translateX(-90px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes ddz-stamp {
+  from {
+    opacity: 0.2;
+    scale: 1.12;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ddz-last-play.ddz-play-animated {
+    animation: ddz-arrive 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .ddz-last-play.from-left {
+    --ddz-from-x: -45px;
+    --ddz-from-y: 0;
+  }
+  .ddz-last-play.from-right {
+    --ddz-from-x: 45px;
+    --ddz-from-y: 0;
+  }
+}
+@media (max-width: 1050px) {
+  .ddz-page {
+    padding: 10px 14px;
+  }
+  .ddz-arena {
+    padding: 16px;
+    grid-template-columns: 120px minmax(0, 1fr) 120px;
+  }
+  .ddz-player {
+    gap: 7px;
+  }
+  .ddz-avatar {
+    width: 42px;
+    height: 50px;
+    flex-basis: 42px;
+  }
+  .ddz-player-info > strong {
+    font-size: 14px;
+  }
+  .ddz-hand-section {
+    width: calc(100% - 160px);
+  }
+  .ddz-player-self {
+    width: 110px;
+  }
+  .ddz-player-self .ddz-avatar {
+    display: none;
+  }
+  .poker-fan {
+    height: var(--card-height, 96px);
+  }
+  .poker-fan .poker-card {
+    height: var(--card-height, 96px);
+  }
+  .poker-fan .poker-corner {
+    font-size: 24px;
+  }
+  .ddz-arena {
+    min-height: 520px;
+  }
+}
+@media (max-width: 640px) {
+  .ddz-page {
+    padding: 8px;
+    gap: 8px;
+  }
+  .ddz-toolbar {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .ddz-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    gap: 8px;
+  }
+  .ddz-title h1 {
+    font-size: 20px;
+    max-width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .ddz-title p {
+    font-size: 11px;
+  }
+  .ddz-tools {
+    width: 100%;
+    justify-content: space-between;
+    gap: 2px;
+  }
+  .ddz-tools .utility-button {
+    padding: 6px;
+    font-size: 12px;
+    gap: 4px;
+  }
+  .ddz-arena {
+    height: calc(100dvh - 110px);
+    min-height: 630px;
+    grid-template-columns: 86px minmax(0, 1fr) 86px;
+    grid-template-rows: 106px minmax(105px, 1fr) auto 54px;
+    padding: 12px 6px 8px;
+    gap: 6px;
+    border-radius: 18px;
+  }
+  .ddz-arena:before {
+    inset: 7px;
+  }
+  .ddz-table-meta {
+    padding-top: 0;
+  }
+  .ddz-table-meta > p {
+    font-size: 11px;
+    white-space: nowrap;
+    margin: 8px 0;
+  }
+  .ddz-table-meta > p > span {
+    display: none;
+  }
+  .ddz-table-meta > p b {
+    font-size: 14px;
+    margin-left: 4px;
+  }
+  .ddz-bottom {
+    gap: 3px;
+  }
+  .ddz-bottom .poker-card,
+  .ddz-bottom .poker-back {
+    width: 29px;
+    height: 42px;
+  }
+  .ddz-bottom .poker-corner {
+    font-size: 13px;
+  }
+  .ddz-bottom .poker-corner-bottom {
+    display: none;
+  }
+  .ddz-player-left,
+  .ddz-player-right {
+    margin-top: 12px;
+    gap: 6px;
+    flex-direction: column;
+    grid-row: 1;
+    align-items: flex-start;
+  }
+  .ddz-player-right {
+    align-items: flex-end;
+  }
+  .ddz-avatar {
+    width: 36px;
+    height: 40px;
+    flex-basis: 40px;
+    border-radius: 13px;
+  }
+  .ddz-avatar > svg {
+    width: 22px;
+    height: 22px;
+  }
+  .ddz-clock {
+    left: auto;
+    right: -16px;
+    bottom: 0;
+    transform: none;
+    min-width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+  .ddz-player-right .ddz-clock {
+    left: -16px;
+    right: auto;
+  }
+  .ddz-player-info {
+    gap: 3px;
+    font-size: 12px;
+  }
+  .ddz-player-info > strong {
+    font-size: 13px;
+  }
+  .ddz-player-score {
+    font-size: 10px;
+  }
+  .ddz-role {
+    font-size: 11px;
+  }
+  .ddz-card-count {
+    font-size: 12px;
+    position: absolute;
+    top: 11px;
+    left: 45px;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .ddz-player-right .ddz-card-count {
+    left: auto;
+    right: 45px;
+  }
+  .ddz-card-count .poker-back {
+    display: none;
+  }
+  .ddz-player.acting .ddz-card-count {
+    top: 39px;
+  }
+  .ddz-player-bubble {
+    top: 87px;
+    left: 0;
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .ddz-player-right .ddz-player-bubble {
+    right: 0;
+  }
+  .ddz-center {
+    grid-column: 1/-1;
+    grid-row: 2;
+    padding-bottom: 2px;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .ddz-status {
+    font-size: 13px;
+  }
+  .ddz-table-mark span {
+    font-size: 38px;
+  }
+  .ddz-table-mark b {
+    font-size: 15px;
+  }
+  .ddz-last-play > p {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+  .ddz-last-play strong {
+    font-size: 13px;
+  }
+  .ddz-last-play .poker-card {
+    width: 46px;
+    height: 66px;
+    margin-left: -25px;
+  }
+  .ddz-last-play .poker-row {
+    padding-left: 25px;
+    gap: 2px;
+  }
+  .ddz-last-play .poker-corner {
+    font-size: 19px;
+  }
+  .ddz-last-play .poker-art {
+    inset: 20% 27%;
+  }
+  .ddz-hand-area {
+    display: block;
+  }
+  .ddz-player-self {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 2px 8px;
+  }
+  .ddz-player-self .ddz-avatar {
+    display: none;
+  }
+  .ddz-player-self .ddz-player-info {
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .ddz-player-self .ddz-player-score {
+    margin-left: auto;
+  }
+  .ddz-player-self .ddz-bid-label {
+    font-size: 13px;
+  }
+  .ddz-player-self .ddz-player-bubble {
+    top: -20px;
+    left: auto;
+    right: 5px;
+  }
+  .ddz-hand-section {
+    width: 100%;
+  }
+  .ddz-hand-heading {
+    font-size: 11px;
+    gap: 3px;
+  }
+  .ddz-hand-heading > span {
+    line-height: 1.3;
+    max-width: 75%;
+    min-height: 14px;
+  }
+  .poker-hand {
+    padding-top: 19px;
+    gap: 18px;
+  }
+  .poker-fan {
+    height: var(--card-height, 96px);
+  }
+  .poker-fan .poker-card {
+    height: var(--card-height, 96px);
+  }
+  .poker-fan .poker-corner {
+    font-size: 23px;
+  }
+  .ddz-expand {
+    font-size: 11px;
+    margin: 0 auto;
+    min-height: 48px !important;
+  }
+  .ddz-actions {
+    gap: 7px;
+    position: sticky;
+    bottom: 0;
+    background: #10362ef5;
+    border-radius: 12px;
+    padding: 3px 0 max(3px, env(safe-area-inset-bottom));
+  }
+  .ddz-actions .button {
+    min-width: 0;
+    flex: 1;
+    min-height: 48px;
+    padding: 6px 8px;
+    font-size: 15px;
+  }
+  .ddz-actions .primary {
+    min-width: 80px;
+  }
+  .ddz-feedback {
+    padding: 8px 15px;
+  }
+  .ddz-feedback b {
+    font-size: 23px;
+  }
+  .ddz-effect-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+  .ddz-scoreboard {
+    gap: 10px;
+    font-size: 12px;
+  }
+  .ddz-scoreboard > div {
+    min-width: 65px;
+  }
+  .ddz-settlement {
+    padding: 14px 8px;
+  }
+  .ddz-settlement h2 {
+    font-size: 20px;
+  }
+  .ddz-empty-controls {
+    gap: 2px;
+  }
+  .ddz-empty-controls .button,
+  .ddz-empty-controls .utility-button,
+  .ddz-remove-bot {
+    font-size: 11px;
+    padding: 3px 5px;
+  }
+  .ddz-waiting-copy {
+    font-size: 13px;
+  }
+  .ddz-hint-message {
+    bottom: 64px;
+    font-size: 12px;
+    width: 90%;
+  }
+}
+@media (max-width: 640px) and (max-height: 700px) {
+  .ddz-arena {
+    min-height: 540px;
+    grid-template-rows: 98px minmax(92px, 1fr) auto 54px;
+  }
+  .ddz-center {
+    gap: 5px;
+  }
+  .poker-hand {
+    gap: 12px;
+  }
+  .ddz-player-self {
+    margin-bottom: 3px;
+  }
+  .ddz-hand-heading {
+    margin-bottom: 0;
+  }
+  .ddz-table-mark span {
+    font-size: 24px;
+  }
+  .ddz-expand {
+    min-height: 48px !important;
+  }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .ddz-page {
+    padding: 4px 10px;
+    gap: 4px;
+  }
+  .ddz-toolbar {
+    min-height: 44px;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+  .ddz-title {
+    width: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .ddz-title h1 {
+    font-size: 18px;
+    max-width: 200px;
+  }
+  .ddz-title p {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .ddz-tools {
+    width: auto;
+    gap: 4px;
+  }
+  .ddz-tools .utility-button {
+    min-height: 44px;
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+  .ddz-arena {
+    height: calc(100dvh - 56px);
+    min-height: 290px;
+    padding: 8px 10px 5px;
+    grid-template-columns: 100px minmax(0, 1fr) 100px;
+    grid-template-rows: 44px minmax(38px, 1fr) 127px 44px;
+    gap: 3px;
+    border-radius: 16px;
+  }
+  .ddz-table-meta {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  .ddz-table-meta > p {
+    white-space: nowrap;
+    font-size: 11px;
+    margin: 0;
+  }
+  .ddz-table-meta > p b {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  .ddz-table-meta > p > span {
+    display: none;
+  }
+  .ddz-bottom .poker-card,
+  .ddz-bottom .poker-back {
+    width: 24px;
+    height: 34px;
+    border-radius: 3px;
+  }
+  .ddz-bottom .poker-corner {
+    font-size: 11px;
+  }
+  .ddz-bottom .poker-corner-bottom,
+  .ddz-bottom .poker-art {
+    display: none;
+  }
+  .ddz-bottom .poker-corner {
+    left: 24%;
+    top: 9%;
+  }
+  .ddz-player-left,
+  .ddz-player-right {
+    margin-top: 4px;
+    gap: 5px;
+  }
+  .ddz-avatar {
+    width: 34px;
+    height: 40px;
+    flex-basis: 34px;
+  }
+  .ddz-avatar > svg {
+    width: 21px;
+    height: 21px;
+  }
+  .ddz-player-info > strong {
+    font-size: 12px;
+  }
+  .ddz-player-info {
+    gap: 2px;
+  }
+  .ddz-role,
+  .ddz-player-score {
+    font-size: 10px;
+  }
+  .ddz-card-count {
+    font-size: 11px;
+    margin-top: 4px;
+    gap: 4px;
+  }
+  .ddz-card-count .poker-back {
+    width: 15px;
+    height: 22px;
+  }
+  .ddz-clock {
+    height: 22px;
+    min-width: 25px;
+    font-size: 11px;
+    bottom: -13px;
+  }
+  .ddz-center {
+    justify-content: center;
+    padding: 0;
+    gap: 4px;
+    grid-row: 2;
+    align-self: start;
+  }
+  .ddz-status {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .ddz-last-play {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .ddz-last-play > p {
+    font-size: 10px;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .ddz-last-play strong {
+    font-size: 12px;
+  }
+  .ddz-last-play .poker-card {
+    width: 35px;
+    height: 48px;
+    margin-left: -19px;
+  }
+  .ddz-last-play .poker-corner {
+    font-size: 15px;
+  }
+  .ddz-last-play .poker-row {
+    padding-left: 19px;
+    gap: 1px;
+  }
+  .ddz-last-play .poker-art {
+    display: none;
+  }
+  .ddz-table-mark {
+    display: none;
+  }
+  .ddz-hand-area {
+    align-items: end;
+  }
+  .ddz-hand-section {
+    width: calc(100% - 150px);
+    max-width: 840px;
+  }
+  .ddz-player-self {
+    bottom: 8px;
+    width: 88px;
+  }
+  .ddz-player-self .ddz-player-info {
+    gap: 2px;
+  }
+  .ddz-hand-heading {
+    font-size: 10px;
+    margin: 0;
+    min-height: 15px;
+  }
+  .ddz-hand-heading > span {
+    min-height: 12px;
+  }
+  .poker-hand {
+    padding: 17px 0 3px;
+    gap: 12px;
+  }
+  .poker-fan,
+  .poker-fan .poker-card {
+    height: 88px;
+  }
+  .poker-fan .poker-corner {
+    font-size: 23px;
+  }
+  .poker-fan .poker-court {
+    font-size: 23px;
+  }
+  .ddz-expand {
+    position: absolute;
+    right: -82px;
+    bottom: 9px;
+    font-size: 10px;
+    width: 74px;
+    min-height: 44px !important;
+    padding: 2px 3px;
+    gap: 3px;
+  }
+  .ddz-expand svg {
+    width: 12px;
+  }
+  .ddz-actions {
+    min-height: 44px;
+    gap: 8px;
+    position: static;
+    padding: 0;
+    background: transparent;
+  }
+  .ddz-actions .button {
+    min-height: 44px;
+    min-width: 80px;
+    font-size: 14px;
+    padding: 4px 12px;
+  }
+  .ddz-actions .primary {
+    min-width: 110px;
+  }
+  .ddz-player-bubble {
+    top: 95px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  .ddz-feedback {
+    top: 70%;
+    padding: 5px 14px;
+  }
+  .ddz-feedback b {
+    font-size: 21px;
+  }
+  .ddz-feedback small {
+    font-size: 10px;
+    margin: 0;
+  }
+  .ddz-effect-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+  .ddz-feedback-finish:after,
+  .ddz-feedback-spring:after,
+  .ddz-feedback-anti-spring:after {
+    top: -20px;
+    font-size: 17px;
+  }
+  .ddz-empty-controls .button,
+  .ddz-empty-controls .utility-button,
+  .ddz-remove-bot {
+    min-height: 44px;
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+  .ddz-hint-message {
+    bottom: 50px;
+  }
+  .ddz-waiting-copy {
+    padding: 30px 0;
+    font-size: 13px;
+  }
+}
+.ddz-reduced-motion .ddz-last-play,
+.ddz-reduced-motion .ddz-feedback,
+.ddz-reduced-motion .ddz-feedback:before,
+.ddz-reduced-motion .ddz-effect-icon,
+.poker-static .poker-card {
+  animation: none !important;
+  transition: none !important;
+}
+@media (max-width: 640px) {
+  .ddz-last-play .poker-row {
+    flex-wrap: wrap;
+    row-gap: 6px;
+    max-width: 100%;
+  }
+}
+.poker-hand {
+  isolation: isolate;
+}
+.ddz-actions {
+  isolation: isolate;
+  background: #10362e;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ddz-page *,
+  .ddz-page *:before,
+  .ddz-page *:after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .poker-card {
+    transition: none !important;
+  }
+}

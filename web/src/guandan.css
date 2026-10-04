@@ -1,0 +1,342 @@
+.gd-arena {
+  grid-template-rows: 32px 98px minmax(110px, 1fr) auto 68px;
+  height: auto;
+  min-height: calc(100dvh - 108px);
+}
+.gd-arena .ddz-player-top {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: center;
+  flex-direction: row;
+  align-self: start;
+  min-width: 190px;
+}
+.gd-arena .ddz-player-left,
+.gd-arena .ddz-player-right {
+  grid-row: 2/4;
+  margin-top: 16px;
+}
+.gd-arena .ddz-center {
+  grid-row: 3;
+}
+.gd-arena .ddz-hand-area {
+  grid-row: 4;
+}
+.gd-arena .ddz-actions {
+  grid-row: 5;
+}
+.gd-level-panel {
+  grid-column: 1/-1;
+  grid-row: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.gd-level-panel strong {
+  color: var(--accent);
+  font-size: 24px;
+  font-family: "Noto Serif SC", serif;
+}
+.gd-teammate .ddz-role {
+  color: var(--accent);
+}
+.gd-card-level {
+  position: absolute;
+  left: 5%;
+  top: 57%;
+  border-radius: 3px;
+  padding: 2px 3px;
+  background: #d7b77f;
+  color: #193831;
+  font:
+    600 11px/1 "Noto Sans SC",
+    sans-serif;
+}
+.gd-wild {
+  border-color: #ae7d28;
+  box-shadow:
+    0 3px 0 #b8c2ad,
+    inset 0 0 0 1px #d7b77f;
+}
+.gd-interpretation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+.gd-interpretation select {
+  min-height: 44px;
+  max-width: 280px;
+}
+.gd-tribute {
+  text-align: center;
+  color: var(--muted);
+}
+.gd-tribute p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+.gd-page .ddz-scoreboard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.gd-page .ddz-scoreboard > div {
+  min-width: 0;
+}
+.gd-arena .ddz-feedback {
+  max-width: 90%;
+}
+.gd-page .poker-hand {
+  height: auto;
+}
+.gd-arena .ddz-hand-section {
+  width: calc(100% - 360px);
+}
+.gd-replay .poker-row {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.gd-arena.gd-complete {
+  min-height: 420px;
+}
+@media (max-width: 640px) and (orientation: portrait) {
+  .gd-arena {
+    grid-template-columns: 74px minmax(0, 1fr) 74px;
+    grid-template-rows: 32px 82px minmax(54px, 1fr) auto auto;
+    padding: 12px 10px;
+    min-height: calc(100dvh - 110px);
+    gap: 8px;
+  }
+  .gd-arena .ddz-player-top {
+    min-width: 0;
+    max-width: 180px;
+  }
+  .gd-arena .ddz-player-top .ddz-avatar {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+  }
+  .gd-level-panel {
+    font-size: 12px;
+    gap: 12px;
+  }
+  .gd-level-panel strong {
+    font-size: 21px;
+  }
+  .gd-level-panel small {
+    display: none;
+  }
+  .gd-page .ddz-scoreboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .gd-arena .ddz-center {
+    padding-top: 4px;
+  }
+  .gd-arena .ddz-center .ddz-table-mark {
+    display: none;
+  }
+  .gd-tribute {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .gd-tribute p:first-child {
+    display: none;
+  }
+  .gd-tribute p:last-child {
+    max-width: 220px;
+    font-size: 12px;
+    text-align: left;
+  }
+  .gd-tribute .poker-card {
+    width: 42px;
+    height: 60px;
+  }
+  .gd-tribute .poker-corner {
+    font-size: 18px;
+  }
+  .gd-arena .ddz-hand-section {
+    width: 100%;
+  }
+  .gd-arena .ddz-player-self {
+    padding-right: 108px;
+  }
+  .gd-arena .ddz-player-self .ddz-player-score {
+    margin-left: 0;
+  }
+  .gd-arena .ddz-expand {
+    position: absolute;
+    top: -44px;
+    right: 0;
+    margin: 0;
+    width: 100px;
+  }
+  .gd-arena .ddz-player-left,
+  .gd-arena .ddz-player-right {
+    grid-row: 2;
+    margin-top: 6px;
+  }
+  .gd-arena .ddz-player-left .ddz-avatar,
+  .gd-arena .ddz-player-right .ddz-avatar {
+    position: absolute;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+    border-radius: 10px;
+  }
+  .gd-arena .ddz-player-left .ddz-avatar {
+    left: 0;
+  }
+  .gd-arena .ddz-player-right .ddz-avatar {
+    right: 0;
+  }
+  .gd-arena .ddz-player-left .ddz-player-info > strong {
+    padding-left: 32px;
+  }
+  .gd-arena .ddz-player-right .ddz-player-info > strong {
+    padding-right: 32px;
+  }
+  .gd-arena .ddz-player-left .ddz-player-info > strong,
+  .gd-arena .ddz-player-right .ddz-player-info > strong {
+    min-height: 28px;
+    line-height: 28px;
+  }
+  .gd-arena .ddz-player-self .ddz-card-count {
+    display: none;
+  }
+  .gd-arena .poker-hand {
+    gap: 12px;
+  }
+  .gd-arena .poker-fan,
+  .gd-arena .poker-fan .poker-card {
+    height: 88px;
+  }
+  .gd-arena .ddz-last-play .poker-card {
+    height: 58px;
+  }
+  .gd-arena .ddz-card-count {
+    position: static;
+    font-size: 12px;
+  }
+  .gd-arena .ddz-actions {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 56px;
+  }
+  .gd-arena.gd-complete {
+    min-height: 400px;
+  }
+  .gd-complete .ddz-waiting-copy {
+    padding: 4px 0;
+  }
+}
+@media (max-height: 600px) and (orientation: landscape) {
+  .gd-page {
+    padding: 4px;
+  }
+  .gd-arena {
+    height: auto;
+    min-height: calc(100dvh - 60px);
+    grid-template-columns: 112px minmax(0, 1fr) 112px;
+    grid-template-rows: 56px minmax(60px, 1fr) auto 44px;
+    padding: 4px 6px;
+    gap: 4px;
+  }
+  .gd-arena .ddz-player-top {
+    flex-direction: row;
+    font-size: 12px;
+  }
+  .gd-level-panel {
+    font-size: 11px;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+  }
+  .gd-level-panel strong {
+    font-size: 20px;
+  }
+  .gd-level-panel small {
+    display: none;
+  }
+  .gd-arena .ddz-player-top .ddz-avatar {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+  }
+  .gd-arena .ddz-player-top {
+    grid-row: 1;
+    align-self: end;
+    min-width: 0;
+  }
+  .gd-arena .ddz-player-top .ddz-player-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 8px;
+  }
+  .gd-arena .ddz-player-top .ddz-player-score {
+    display: none;
+  }
+  .gd-arena .ddz-player-top .ddz-card-count {
+    margin: 0;
+  }
+  .gd-arena .ddz-player-left,
+  .gd-arena .ddz-player-right {
+    grid-row: 1/3;
+    margin-top: 14px;
+  }
+  .gd-arena .ddz-center {
+    grid-row: 2;
+  }
+  .gd-arena .ddz-hand-area {
+    grid-row: 3;
+  }
+  .gd-arena .ddz-actions {
+    grid-row: 4;
+    padding-right: 116px;
+  }
+  .gd-arena .ddz-hand-area {
+    display: block;
+  }
+  .gd-arena .ddz-player-self {
+    display: none;
+  }
+  .gd-arena .ddz-player-self .ddz-avatar {
+    display: none;
+  }
+  .gd-arena .ddz-player-self .ddz-player-info {
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+  .gd-arena .ddz-player-self .ddz-card-count {
+    margin: 0;
+  }
+  .gd-arena .ddz-hand-section {
+    width: 100%;
+    max-width: none;
+  }
+  .gd-arena .poker-hand {
+    padding: 12px 0 1px;
+  }
+  .gd-arena .ddz-expand {
+    position: absolute;
+    top: auto;
+    bottom: -53px;
+    right: 0;
+    width: 104px;
+    margin: 0;
+    min-height: 44px !important;
+    z-index: 6;
+  }
+  .gd-arena .ddz-center {
+    align-self: stretch;
+  }
+}

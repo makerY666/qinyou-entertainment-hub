@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = ["crates/mahjong", "crates/doudizhu", "crates/guandan", "crates/hub-server", "apps/native"]
+default-members = ["crates/mahjong", "crates/doudizhu", "crates/guandan", "crates/hub-server"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license-file = "LICENSE"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true
