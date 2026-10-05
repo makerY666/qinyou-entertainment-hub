@@ -8,7 +8,7 @@ Android 的 `HostService` 在 `connectedDevice` 前台服务内通过 JNI 启停
 
 - Node.js 22+ 与 npm；Rust stable。
 - Windows：推荐 Microsoft C++ Build Tools + Windows SDK；本机开发也支持 MinGW GNU 目标。
-- Android：JDK 21、SDK platform 37（SDK Manager 包 `platforms;android-37.0`）、Build Tools 37、NDK 29.0.14206865、Rust `aarch64-linux-android` 目标。
+- Android：JDK 21、SDK platform 37（SDK Manager 包 `platforms;android-37`）、Build Tools 37、NDK 29.0.14206865、Rust `aarch64-linux-android` 目标。
 - 设置 `JAVA_HOME`、`ANDROID_HOME`、`NDK_HOME`。构建脚本优先使用工作区 `.tools`，不修改全局环境。
 
 ```powershell
